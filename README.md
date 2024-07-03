@@ -1,6 +1,6 @@
 Neovim config
 
-Based on Primeagean's nvim config:
+Based on Primeagen's nvim config:
 https://github.com/ThePrimeagen/init.lua
 
 I've added some useful plugins and removed some that was annoying.
