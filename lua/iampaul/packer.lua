@@ -94,18 +94,18 @@ return require('packer').startup(function(use)
     use('jose-elias-alvarez/null-ls.nvim')
     use('MunifTanjim/prettier.nvim')
 
-    use {
-        'Exafunction/codeium.vim',
-        config = function()
-            -- Change '<C-g>' here to any keycode you like.
-            vim.keymap.set('i', '<C-g>', function() return vim.fn['codeium#Accept']() end, { expr = true, silent = true })
-            vim.keymap.set('i', '<c-;>', function() return vim.fn['codeium#CycleCompletions'](1) end,
-                { expr = true, silent = true })
-            vim.keymap.set('i', '<c-,>', function() return vim.fn['codeium#CycleCompletions'](-1) end,
-                { expr = true, silent = true })
-            vim.keymap.set('i', '<c-x>', function() return vim.fn['codeium#Clear']() end, { expr = true, silent = true })
-        end
-    }
+    --[[ use { ]]
+    --[[     'Exafunction/codeium.vim', ]]
+    --[[     config = function() ]]
+    --[[         -- Change '<C-g>' here to any keycode you like. ]]
+    --[[         vim.keymap.set('i', '<C-g>', function() return vim.fn['codeium#Accept']() end, { expr = true, silent = true }) ]]
+    --[[         vim.keymap.set('i', '<c-;>', function() return vim.fn['codeium#CycleCompletions'](1) end, ]]
+    --[[             { expr = true, silent = true }) ]]
+    --[[         vim.keymap.set('i', '<c-,>', function() return vim.fn['codeium#CycleCompletions'](-1) end, ]]
+    --[[             { expr = true, silent = true }) ]]
+    --[[         vim.keymap.set('i', '<c-x>', function() return vim.fn['codeium#Clear']() end, { expr = true, silent = true }) ]]
+    --[[     end ]]
+    --[[ } ]]
 
     use { 'neoclide/coc.nvim', branch = 'release' }
 
@@ -128,4 +128,20 @@ return require('packer').startup(function(use)
     use "nvim-tree/nvim-web-devicons"
 
     --[[ use('echasnovski/mini.pairs') ]]
+    use {
+        "supermaven-inc/supermaven-nvim",
+        config = function()
+            require("supermaven-nvim").setup({})
+        end,
+    }
+
+    use {
+        "FabijanZulj/blame.nvim",
+        config = function()
+            require("blame").setup()
+        end
+    }
+
+
+    use "psf/black"
 end)

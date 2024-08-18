@@ -10,7 +10,8 @@ lsp.ensure_installed({
     'html',
     'jsonls',
     'lua_ls',
-    'lemminx'
+    'lemminx',
+    "pylsp"
 })
 
 -- Fix Undefined global 'vim'
